@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kairos ご提案 | DEDJAV GROUP 様 不動産コーポレートサイト制作</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal:#1E2320;
+    --sand:#F2EDE4;
+    --sand-deep:#E7DFD0;
+    --stone:#8F8878;
+    --gold:#B8935A;
+    --forest:#3C4A3E;
+    --white:#FFFFFF;
+    --line: rgba(30,35,32,0.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--sand);
+    color:var(--charcoal);
+    font-family:'Noto Sans JP', sans-serif;
+    font-weight:400;
+    line-height:1.9;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{
+    font-family:'Shippori Mincho', serif;
+    font-weight:700;
+    letter-spacing:0.03em;
+  }
+  .mono{
+    font-family:'Space Mono', monospace;
+  }
+  a{text-decoration:none;color:inherit;}
+  .wrap{
+    max-width:1140px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  .label-tag{
+    display:inline-block;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    padding:7px 14px;
+    border:1px solid var(--gold);
+    color:var(--gold);
+    border-radius:2px;
+  }
+
+  /* ---------------- HERO ---------------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background:
+      repeating-linear-gradient(0deg, rgba(184,147,90,0.06) 0 1px, transparent 1px 64px),
+      repeating-linear-gradient(90deg, rgba(184,147,90,0.06) 0 1px, transparent 1px 64px),
+      radial-gradient(ellipse at 20% 20%, #2A3129 0%, var(--charcoal) 55%);
+    color:var(--sand);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:120px 32px 100px;
+  }
+  .hero-corner{
+    position:absolute;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    color:rgba(242,237,228,0.45);
+    line-height:1.6;
+  }
+  .hero-corner.tl{top:28px; left:32px;}
+  .hero-corner.br{bottom:28px; right:32px; text-align:right;}
+  .hero-corner span{color:var(--gold);}
+  .hero-corner::before{
+    content:"";
+    display:inline-block;
+    width:7px;height:7px;
+    border-radius:50%;
+    background:var(--gold);
+    margin-right:6px;
+    vertical-align:middle;
+  }
+  .hero-inner{
+    max-width:880px;
+    margin:0 auto;
+    text-align:center;
+  }
+  .hero .label-tag{margin-bottom:28px;}
+  .hero h1{
+    font-size:clamp(32px, 6vw, 58px);
+    line-height:1.5;
+    margin:28px 0 24px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--gold);
+  }
+  .hero p{
+    font-size:15px;
+    color:rgba(242,237,228,0.78);
+    max-width:560px;
+    margin:0 auto;
+  }
+  .hero-foot{
+    margin-top:56px;
+    display:flex;
+    justify-content:center;
+    gap:36px;
+    flex-wrap:wrap;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    color:rgba(242,237,228,0.5);
+    letter-spacing:0.08em;
+  }
+  .hero-foot b{color:var(--gold); font-weight:400;}
+
+  /* ---------------- SECTION COMMON ---------------- */
+  section{
+    padding:110px 0;
+    position:relative;
+  }
+  .sec-head{
+    margin-bottom:56px;
+  }
+  .sec-head .label-tag{
+    border-color:var(--forest);
+    color:var(--forest);
+    margin-bottom:18px;
+  }
+  .sec-head h2{
+    font-size:clamp(24px,3.4vw,34px);
+    color:var(--charcoal);
+  }
+  .sec-head p.lead{
+    margin-top:16px;
+    max-width:620px;
+    color:var(--stone);
+    font-size:15px;
+  }
+
+  /* ---------------- UNDERSTANDING ---------------- */
+  .understanding{
+    background:var(--sand-deep);
+  }
+  .und-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:60px;
+    align-items:start;
+  }
+  .issue-list{
+    display:flex;
+    flex-direction:column;
+    gap:26px;
+  }
+  .issue-item{
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+  }
+  .issue-num{
+    font-family:'Space Mono', monospace;
+    font-size:13px;
+    color:var(--gold);
+    border:1px solid var(--gold);
+    width:34px;height:34px;
+    flex:0 0 34px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .issue-item h3{
+    font-family:'Noto Sans JP', sans-serif;
+    font-size:16px;
+    font-weight:700;
+    margin-bottom:6px;
+    color:var(--charcoal);
+  }
+  .issue-item p{
+    font-size:13.5px;
+    color:var(--stone);
+  }
+
+  /* mock site preview */
+  .mock{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:0 30px 60px -30px rgba(30,35,32,0.35);
+  }
+  .mock-bar{
+    background:var(--charcoal);
+    padding:10px 14px;
+    display:flex;
+    gap:6px;
+  }
+  .mock-bar span{
+    width:8px;height:8px;border-radius:50%;
+    background:rgba(242,237,228,0.3);
+  }
+  .mock-body{padding:22px;}
+  .mock-nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid var(--line);
+    padding-bottom:14px;
+    margin-bottom:18px;
+  }
+  .mock-logo{
+    width:64px;height:10px;
+    background:var(--forest);
+    border-radius:2px;
+  }
+  .mock-nav-links{display:flex; gap:10px;}
+  .mock-nav-links span{
+    width:28px;height:6px;background:var(--line);border-radius:2px;
+  }
+  .mock-hero{
+    height:90px;
+    background:linear-gradient(120deg, var(--sand-deep), var(--sand));
+    border:1px dashed var(--gold);
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:0 16px;
+    gap:8px;
+    margin-bottom:18px;
+  }
+  .mock-hero .l1{width:55%;height:9px;background:var(--charcoal);opacity:0.75;border-radius:2px;}
+  .mock-hero .l2{width:35%;height:6px;background:var(--stone);opacity:0.5;border-radius:2px;}
+  .mock-cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+  }
+  .mock-card{
+    background:var(--sand-deep);
+    border-radius:4px;
+    padding:10px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .mock-card .ph{
+    height:36px;
+    background:linear-gradient(135deg, var(--forest), var(--gold));
+    opacity:0.35;
+    border-radius:3px;
+  }
+  .mock-card .tx{height:6px;width:70%;background:var(--stone);opacity:0.5;border-radius:2px;}
+  .mock-caption{
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    color:var(--stone);
+    text-align:center;
+    margin-top:14px;
+    letter-spacing:0.05em;
+  }
+
+  /* ---------------- VALUES ---------------- */
+  .values{background:var(--sand);}
+  .value-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+  }
+  .value-card{
+    background:var(--white);
+    border-top:3px solid var(--gold);
+    padding:36px 28px;
+    border-radius:4px;
+    box-shadow:0 20px 40px -32px rgba(30,35,32,0.5);
+    transition:transform .25s ease;
+  }
+  .value-card:hover{transform:translateY(-6px);}
+  .value-icon{
+    width:40px;height:40px;
+    border-radius:50%;
+    border:1px solid var(--forest);
+    position:relative;
+    margin-bottom:22px;
+  }
+  .value-icon::before,
+  .value-icon::after{
+    content:"";
+    position:absolute;
+    background:var(--forest);
+  }
+  .value-icon::before{
+    width:16px;height:2px;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+  }
+  .value-icon::after{
+    width:2px;height:16px;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+  }
+  .value-card h3{
+    font-family:'Noto Sans JP', sans-serif;
+    font-size:17px;
+    font-weight:700;
+    margin-bottom:12px;
+  }
+  .value-card p{
+    font-size:13.5px;
+    color:var(--stone);
+  }
+  .value-card .tag{
+    display:block;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    color:var(--gold);
+    margin-bottom:10px;
+    letter-spacing:0.1em;
+  }
+
+  /* ---------------- PROCESS ---------------- */
+  .process{
+    background:var(--charcoal);
+    color:var(--sand);
+  }
+  .process .sec-head .label-tag{
+    border-color:var(--gold);
+    color:var(--gold);
+  }
+  .process .sec-head h2{color:var(--sand);}
+  .process .sec-head p.lead{color:rgba(242,237,228,0.6);}
+  .timeline{
+    position:relative;
+    padding-left:40px;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:13px; top:6px; bottom:6px;
+    width:1px;
+    background:linear-gradient(var(--gold), rgba(184,147,90,0.1));
+  }
+  .tl-item{
+    position:relative;
+    padding-bottom:46px;
+  }
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:"";
+    position:absolute;
+    left:-40px; top:4px;
+    width:13px;height:13px;
+    border-radius:50%;
+    background:var(--charcoal);
+    border:2px solid var(--gold);
+  }
+  .tl-day{
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    color:var(--gold);
+    letter-spacing:0.1em;
+    margin-bottom:6px;
+    display:block;
+  }
+  .tl-item h3{
+    font-family:'Noto Sans JP', sans-serif;
+    font-size:16px;
+    font-weight:700;
+    margin-bottom:8px;
+  }
+  .tl-item p{
+    font-size:13.5px;
+    color:rgba(242,237,228,0.65);
+    max-width:520px;
+  }
+
+  /* ---------------- CLOSING ---------------- */
+  .closing{
+    background:
+      radial-gradient(ellipse at 80% 20%, rgba(184,147,90,0.18), transparent 60%),
+      var(--forest);
+    color:var(--sand);
+    text-align:center;
+    padding:130px 32px;
+  }
+  .closing .label-tag{
+    border-color:var(--gold); color:var(--gold);
+    margin-bottom:26px;
+  }
+  .closing h2{
+    font-size:clamp(26px,4vw,40px);
+    color:var(--white);
+    margin-bottom:20px;
+  }
+  .closing p{
+    max-width:560px;
+    margin:0 auto 42px;
+    color:rgba(242,237,228,0.78);
+    font-size:15px;
+  }
+  .cta-btn{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--charcoal);
+    font-weight:700;
+    padding:18px 44px;
+    border-radius:2px;
+    font-size:14px;
+    letter-spacing:0.05em;
+    transition:opacity .2s ease;
+  }
+  .cta-btn:hover{opacity:0.85;}
+  .closing-note{
+    margin-top:28px;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    color:rgba(242,237,228,0.45);
+    letter-spacing:0.05em;
+  }
+
+  footer{
+    background:var(--charcoal);
+    color:rgba(242,237,228,0.4);
+    text-align:center;
+    padding:28px;
+    font-family:'Space Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+  }
+  footer span{color:var(--gold);}
+
+  @media (max-width:860px){
+    .und-grid{grid-template-columns:1fr;}
+    .value-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:600px){
+    .value-grid{grid-template-columns:1fr;}
+    .hero{padding:140px 20px 90px;}
+    .hero-corner{display:none;}
+    section{padding:80px 0;}
+    .wrap{padding:0 22px;}
+    .mock-cards{grid-template-columns:repeat(2,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-corner tl mono">LOT. DEDJAV-001<br><span>敷地：新規不動産事業</span></div>
+  <div class="hero-corner br mono">N35°—— E139°——<br><span>SCALE 1 : WEB</span></div>
+  <div class="hero-inner">
+    <span class="label-tag">KAIROS PROPOSAL — DEDJAV GROUP 様へ</span>
+    <h1>まっさらな敷地に、<br><em>はじめの一本の線</em>を引く。</h1>
+    <p>不動産会社のご設立、まことにおめでとうございます。会社の信頼は、最初に触れる一枚のページから始まります。Kairosは、その"第一印象"を設計図から丁寧に描き起こします。</p>
+  </div>
+  <div class="hero-foot">
+    <div>WORDPRESS <b>/</b> レスポンシブ</div>
+    <div>5〜7 PAGES</div>
+    <div>納期 30 <b>DAYS</b></div>
+  </div>
+</section>
+
+<section class="understanding">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label-tag">UNDERSTANDING</span>
+      <h2>はじめての"顔"づくりに、<br>必要なこと。</h2>
+      <p class="lead">設立したばかりの不動産会社にとって、ウェブサイトは営業実績の代わりに信頼を語る唯一の場所です。参考として頂いた heibei.co.jp のような、静かで誠実なトーンを、私たちなりに言語化しました。</p>
+    </div>
+    <div class="und-grid">
+      <div class="issue-list">
+        <div class="issue-item">
+          <div class="issue-num mono">01</div>
+          <div>
+            <h3>実績ゼロからの"信頼の可視化"</h3>
+            <p>設立間もないからこそ、情報設計とトーン＆マナーで安心感を先回りして作る必要があります。</p>
+          </div>
+        </div>
+        <div class="issue-item">
+          <div class="issue-num mono">02</div>
+          <div>
+            <h3>30〜60代に響く、品のある静けさ</h3>
+            <p>派手な演出ではなく、余白と文字組みで魅せる"スタイリッシュ"を実現します。</p>
+          </div>
+        </div>
+        <div class="issue-item">
+          <div class="issue-num mono">03</div>
+          <div>
+            <h3>5〜7ページ・30日という制約の中での完成度</h3>
+            <p>限られた期間でも、デザインの質を落とさない制作体制を組みます。</p>
+          </div>
+        </div>
+        <div class="issue-item">
+          <div class="issue-num mono">04</div>
+          <div>
+            <h3>「継続依頼有」を見据えた土台づくり</h3>
+            <p>物件が増えても崩れない、拡張しやすいWordPress構造を最初から設計します。</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="mock">
+          <div class="mock-bar"><span></span><span></span><span></span></div>
+          <div class="mock-body">
+            <div class="mock-nav">
+              <div class="mock-logo"></div>
+              <div class="mock-nav-links"><span></span><span></span><span></span></div>
+            </div>
+            <div class="mock-hero">
+              <div class="l1"></div>
+              <div class="l2"></div>
+            </div>
+            <div class="mock-cards">
+              <div class="mock-card"><div class="ph"></div><div class="tx"></div></div>
+              <div class="mock-card"><div class="ph"></div><div class="tx"></div></div>
+              <div class="mock-card"><div class="ph"></div><div class="tx"></div></div>
+            </div>
+          </div>
+        </div>
+        <p class="mock-caption">イメージ案：余白を活かしたシンプル構成 / 物件一覧カードの拡張設計</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label-tag">WHAT KAIROS OFFERS</span>
+      <h2>Kairosがご提供できる価値</h2>
+      <p class="lead">デザインから構築、公開後の伴走まで。「作って終わり」にしない体制で、新規事業の船出を支えます。</p>
+    </div>
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="value-icon"></div>
+        <span class="tag mono">01 / HEARING</span>
+        <h3>情報設計からの着手</h3>
+        <p>御社の強み・物件の魅力をヒアリングし、伝わる順番と構成（サイトマップ）を先に固めます。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"></div>
+        <span class="tag mono">02 / DESIGN</span>
+        <h3>テンプレ感のないデザイン</h3>
+        <p>参考サイトのトーンを汲み取りながら、御社だけのオリジナルなシンプル×スタイリッシュを設計します。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"></div>
+        <span class="tag mono">03 / BUILD</span>
+        <h3>更新しやすいWordPress構築</h3>
+        <p>物件情報やお知らせをご自身で追加できる管理画面と、完全レスポンシブ対応を実装します。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"></div>
+        <span class="tag mono">04 / SPEED</span>
+        <h3>30日納期と品質の両立</h3>
+        <p>進行をステップ化し、こまめな共有でスケジュールのブレを防ぎながら完成度を担保します。</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"></div>
+        <span class="tag mono">05 / CONTINUITY</span>
+        <h3>公開後も伴走する継続体制</h3>
+        <p>「継続依頼有」を前提に、追加ページや更新作業にも引き続き対応できる関係づくりを行います。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label-tag">PROCESS</span>
+      <h2>進め方とスケジュール（30日以内）</h2>
+      <p class="lead">短納期でも手戻りが起きないよう、各フェーズでご確認いただく工程を設けています。</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <span class="tl-day mono">DAY 01–03</span>
+        <h3>キックオフ・ヒアリング</h3>
+        <p>会社の方向性、ターゲット、ご用意いただく素材（画像・文章）を確認します。</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-day mono">DAY 04–10</span>
+        <h3>サイト構成・デザインコンセプト提示</h3>
+        <p>サイトマップとワイヤーフレーム、トップページのデザイン案をご提案します。</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-day mono">DAY 11–20</span>
+        <h3>全ページデザイン制作</h3>
+        <p>フィードバックを反映しながら、5〜7ページ分のデザインを仕上げます。</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-day mono">DAY 21–27</span>
+        <h3>WordPress実装・レスポンシブ対応</h3>
+        <p>コーディングと管理画面の構築、スマートフォン・タブレット表示の最終調整を行います。</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-day mono">DAY 28–30</span>
+        <h3>最終確認・公開</h3>
+        <p>表示崩れ・リンク切れ等の最終チェックを経て、ご納品・公開いたします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <span class="label-tag">NEXT ACTION</span>
+  <h2>この指建てから、<br>信頼のかたちへ。</h2>
+  <p>ポートフォリオと簡単な自己紹介、お見積もり金額をご用意のうえ、ぜひご連絡ください。DEDJAV GROUP様の新しい船出に、Kairosもご一緒させていただきたいと思っております。</p>
+  <a href="#" class="cta-btn">ポートフォリオ・お見積りを送る</a>
+  <div class="closing-note mono">KAIROS — WEB & SYSTEM DEVELOPMENT TEAM</div>
+</section>
+
+<footer>
+  <span>KAIROS</span> — この提案書は DEDJAV GROUP 様専用に作成しています。
+</footer>
+
+</body>
+</html>
